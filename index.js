@@ -25,8 +25,11 @@ const supportedModels = {
     'gemini-pro': Gemini,
     'gemini': Gemini,
     'gemini-1.5-pro-latest': Gemini,
+    'gemini-1.5-pro': Gemini,
     'gemini-1.5-flash': Gemini,
     'gemini-2.0-flash-exp': Gemini,
+    'gemini-2.0-flash': Gemini,
+    'gemini-2.0-pro-exp': Gemini,
     'qwen-turbo': Qwen,
     'qwen-max': Qwen,
     'moonshot-v1-8k': Kimi,
@@ -53,7 +56,20 @@ async function getResponse(url, method, headers, body) {
         });
         return response.data;
     } catch (error) {
-        throw new Error(`Error fetching response: ${error}`);
+        if (error.response) {
+            // 服务器响应了一个状态码，表示请求失败
+            console.error(`HTTP Error: ${error.response.status} - ${error.response.statusText}`);
+            console.error(`Response data: ${JSON.stringify(error.response.data)}`);
+            throw new Error(`HTTP Error: ${error.response.status} - ${error.response.statusText}`);
+        } else if (error.request) {
+            // 请求已发出，但没有收到响应
+            console.error('No response received:', error.request);
+            throw new Error('No response received from server');
+        } else {
+            // 其他错误
+            console.error('Error:', error.message);
+            throw new Error(`Error fetching response: ${error.message}`);
+        }
     }
 }
 

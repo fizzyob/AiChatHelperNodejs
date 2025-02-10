@@ -17,6 +17,7 @@ sudo apt update -y
 sudo apt install nodejs -y
 node -v
 npm -v
+npm install dotenv
 ```
 
 3. clone并运行

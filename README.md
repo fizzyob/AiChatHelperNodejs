@@ -62,6 +62,7 @@ node index.js
 | Gemini-pro 1.5 | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-pro-latest |
 | Gemini | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-flash |
 | Gemini | Gemini 2.0 API Key | 手动输入，填写：gemini-2.0-flash-exp |
+| Gemini | Gemini 2.5 API Key | 手动输入，填写：gemini-2.5-flash |
 | 通义千问   | Qwen API Key | 手动输入，填写：qwen-turbo(弃用) 或 qwen-max |
 | Moonshot Kimi | Kimi API Key  | 手动输入，填写：moonshot-v1-8k 或 moonshot-v1-32k |
 | Claude3   | Claude3 API Key | 手动输入，填写：claude-3-opus-20240229 | 

@@ -10,15 +10,15 @@ only for 微信助手<br>
 GPT 类模型所使用的 OpenAI-compatible 上游接口地址。
 默认值：`https://api.openai.com/v1`
 
-
-1. 如果需要进行微信ID鉴权：
+## 需要个人进行修改的说明
+1、如果需要进行微信ID鉴权：
 index.js文件中，找到 const WXID_ARRAY = [];<br>
 在中括号中填入你需要授权的微信ID，支持多个微信ID，用英文引号包括，不同的ID用英文逗号隔开，最后一个ID后面不用加逗号。<br>
 ---如果你的微信ID是wxid_abcdefg,你就填写wxid_abcdefg,别删掉了'wxid_';<br>
 ---如果你的微信ID是lambous就填写lambous、开头别加‘wxid’！<br>
-const PORT = 3003; //端口可以按需修改
-classes/ChatGPT.js中   // https://api.openai.com/v1// 可替换为任意兼容 OpenAI API 的上游接口;<br>
 比如 const WXID_ARRAY = ['wxid_abcdefg','lambous','yourxxx','abdcedf'];<br>
+2、端口修改：const PORT = 3003; //端口可以按需修改;<br>
+3、模型接口修改：在classes/ChatGPT.js中   // https://api.openai.com/v1// 可替换为任意兼容 OpenAI API 的上游接口;<br>
 $\color{red}{每次修改文件必须重新运行才能生效：}$ <br>
 $\color{red}{进入对应会话screen -r aihelper，通过按下 Ctrl + C（在大多数情况下）来停止运行中的 Node.js 应用程序，}$<br>
 $\color{red}{然后再次运行:}$

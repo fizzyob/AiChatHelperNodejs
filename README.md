@@ -1,45 +1,23 @@
 # 搭建各类 AI 的微信助手反向代理
 only for 微信助手<br>
 欢迎来到微信助手 ChatGPT 反向代理项目！<br>
+原项目请移步到https://github.com/GeekinGH/AiChatHelperNodejs  
+### 新增支持
+- 支持配置 OpenAI-compatible 上游接口
+- 支持更多 GPT-family 模型（如 gpt-5 / gpt-5.4 / gpt-5.3-codex 等）
+## 环境变量
+- `OPENAI_BASE_URL`
+GPT 类模型所使用的 OpenAI-compatible 上游接口地址。
+默认值：`https://api.openai.com/v1`
 
-原项目请移步到https://github.com/GeekinGH/AiChatHelperNodejs
-2、部署到自己的服务器或者任何可以搭建NodeJs环境的服务器的，就是本仓库.<br>
-3、部署到CloudFlare的，目前有新的办法可以解决Gemini区域限制和域名问题，目前来看是最省钱最简单的实现方法，请移步到[AiChatHelperCFW](https://github.com/GeekinGH/AiChatHelperCFW)；<br>
 
-
-## 部署
-1. 部署到安装了nodejs环境的服务器即可
-2. 使用 PPA 安装 NodeJS
-```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt update -y
-sudo apt install nodejs -y
-node -v
-npm -v
-npm install dotenv
-```
-
-3. clone并运行
-```bash
-sudo apt install git -y
-git clone https://github.com/GeekinGH/AiChatHelperNodejs.git
-cd AiChatHelperNodejs
-npm install
-sudo apt install screen -y
-screen -S aihelper
-node index.js(或者 npm start)
-```
-按下 Ctrl + A，然后按下 D 键来分离 screen 会话。这将使程序在后台运行。
-当您想再次查看 screen 会话时，可以运行以下命令：
-```bash
-screen -r aihelper
-```
-
-4. 如果需要进行微信ID鉴权：
+1. 如果需要进行微信ID鉴权：
 index.js文件中，找到 const WXID_ARRAY = [];<br>
 在中括号中填入你需要授权的微信ID，支持多个微信ID，用英文引号包括，不同的ID用英文逗号隔开，最后一个ID后面不用加逗号。<br>
 ---如果你的微信ID是wxid_abcdefg,你就填写wxid_abcdefg,别删掉了'wxid_';<br>
 ---如果你的微信ID是lambous就填写lambous、开头别加‘wxid’！<br>
+const PORT = 3003; //端口可以按需修改
+classes/ChatGPT.js中   // https://api.openai.com/v1// 可替换为任意兼容 OpenAI API 的上游接口;<br>
 比如 const WXID_ARRAY = ['wxid_abcdefg','lambous','yourxxx','abdcedf'];<br>
 $\color{red}{每次修改文件必须重新运行才能生效：}$ <br>
 $\color{red}{进入对应会话screen -r aihelper，通过按下 Ctrl + C（在大多数情况下）来停止运行中的 Node.js 应用程序，}$<br>
@@ -49,14 +27,27 @@ node index.js
 ```
 ## 使用方法
 以下操作都是在“微信助手”ChatGPT中操作：
-1. 将你的代理地址填写到“代理地址”栏。（http&#58;&#47;&#47;你的ip:3000）
+1. 将你的代理地址填写到“代理地址”栏。（http&#58;&#47;&#47;你的ip:3003）
 2. “APIKey”中填写对应的API Key，在“模型”中按下表选择或填写。
 
 | AI       | APIKey      | 模型            |
 |-----------|-------------|-----------------|
-| ChatGPT 3.5  | ChatGPT 3.5 API Key | 选择：gpt-3.5-turbo |
-| ChatGPT plus  | ChatGPT 4 API Key | 选择：gpt-4 |
-| GPT-4o  | GPT-4o API Key | 手动输入，填写：GPT-4o |
+| ChatGPT 3.5 | ChatGPT 3.5 API Key | 选择：gpt-3.5-turbo |
+| ChatGPT plus | ChatGPT 4 API Key | 选择：gpt-4 |
+| GPT-4o | GPT-4o API Key | 手动输入，填写：gpt-4o |
+| GPT-5 | GPT-5 API Key | 手动输入，填写：gpt-5 |
+| GPT-5.1 | GPT-5.1 API Key | 手动输入，填写：gpt-5.1 |
+| GPT-5.2 | GPT-5.2 API Key | 手动输入，填写：gpt-5.2 |
+| GPT-5.4 | GPT-5.4 API Key | 手动输入，填写：gpt-5.4 |
+| GPT-5.4-mini | GPT-5.4-mini API Key | 手动输入，填写：gpt-5.4-mini |
+| GPT-5-codex | GPT-5-codex API Key | 手动输入，填写：gpt-5-codex |
+| GPT-5-codex-mini | GPT-5-codex-mini API Key | 手动输入，填写：gpt-5-codex-mini |
+| GPT-5.1-codex | GPT-5.1-codex API Key | 手动输入，填写：gpt-5.1-codex |
+| GPT-5.1-codex-mini | GPT-5.1-codex-mini API Key | 手动输入，填写：gpt-5.1-codex-mini |
+| GPT-5.1-codex-max | GPT-5.1-codex-max API Key | 手动输入，填写：gpt-5.1-codex-max |
+| GPT-5.2-codex | GPT-5.2-codex API Key | 手动输入，填写：gpt-5.2-codex |
+| GPT-5.3-codex | GPT-5.3-codex API Key | 手动输入，填写：gpt-5.3-codex |
+
 | Gemini-pro 1.0 | Gemini 1.0 API Key | 手动输入，填写：Gemini-pro |
 | Gemini-pro 1.5 | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-pro-latest |
 | Gemini | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-flash |

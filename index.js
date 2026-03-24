@@ -12,7 +12,7 @@ const DeepSeek = require('./classes/DeepSeek');
 //需要对特定微信鉴权的，请在[]中填写对应微信ID
 //类似：const WXID_ARRAY = ['wxid_abcdefg','lambous','yourxxx','abdcedf']
 //[]内不添加微信ID则表示不进行鉴权
-const WXID_ARRAY = ['xxxx1','wxid_66voxqfn3wy12',"La0101"];
+const WXID_ARRAY = ['wxid_example1','wxid_example2"];
 
 //360 API Key
 const APIKEY360 = "fk123092065.BKjrK_g2aOp3z2fngVfSKda'bJYeflRZ9b08c23b";

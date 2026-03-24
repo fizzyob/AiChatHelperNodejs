@@ -3,7 +3,7 @@ class ChatGPT {
       this.model = requestModel;
       this.authorization = requestAuthorization;
       const openaiBaseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-       // https://api.openai.com/v1可以换成你的自用接口
+       // https://api.openai.com/v1// 可替换为任意兼容 OpenAI API 的上游接口
       this.url = `${openaiBaseUrl}/chat/completions`;
       this.formatHeaders();
       try {

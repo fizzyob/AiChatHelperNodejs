@@ -29,10 +29,10 @@ $\color{red}{每次修改文件必须重新运行才能生效：}$ <br>
 1. 将你的代理地址填写到“代理地址”栏。（http&#58;&#47;&#47;你的ip:3003）
 2. “APIKey”中填写对应的API Key，在“模型”中按下表选择或填写。
 
-| AI       | APIKey      | 模型            |
+| AI | APIKey | 模型 |
 |-----------|-------------|-----------------|
 | ChatGPT 3.5 | ChatGPT 3.5 API Key | 选择：gpt-3.5-turbo |
-| ChatGPT plus | ChatGPT 4 API Key | 选择：gpt-4 |
+| ChatGPT 4 | ChatGPT 4 API Key | 选择：gpt-4 |
 | GPT-4o | GPT-4o API Key | 手动输入，填写：gpt-4o |
 | GPT-5 | GPT-5 API Key | 手动输入，填写：gpt-5 |
 | GPT-5.1 | GPT-5.1 API Key | 手动输入，填写：gpt-5.1 |
@@ -46,20 +46,24 @@ $\color{red}{每次修改文件必须重新运行才能生效：}$ <br>
 | GPT-5.1-codex-max | GPT-5.1-codex-max API Key | 手动输入，填写：gpt-5.1-codex-max |
 | GPT-5.2-codex | GPT-5.2-codex API Key | 手动输入，填写：gpt-5.2-codex |
 | GPT-5.3-codex | GPT-5.3-codex API Key | 手动输入，填写：gpt-5.3-codex |
-
-| Gemini-pro 1.0 | Gemini 1.0 API Key | 手动输入，填写：Gemini-pro |
+| Gemini-pro 1.0 | Gemini 1.0 API Key | 手动输入，填写：gemini-pro |
 | Gemini-pro 1.5 | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-pro-latest |
-| Gemini | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-flash |
-| Gemini | Gemini 2.0 API Key | 手动输入，填写：gemini-2.0-flash-exp |
-| Gemini | Gemini 2.5 API Key | 手动输入，填写：gemini-2.5-flash |
-| 通义千问   | Qwen API Key | 手动输入，填写：qwen-turbo(弃用) 或 qwen-max |
-| Moonshot Kimi | Kimi API Key  | 手动输入，填写：moonshot-v1-8k 或 moonshot-v1-32k |
-| Claude3   | Claude3 API Key | 手动输入，填写：claude-3-opus-20240229 | 
-| 360智脑   | 360 API Key | 手动输入，填写：360gpt-pro |
-| DeepSeek   | DeepSeek-V3 | 手动输入，填写：deepseek-chat |
-| DeepSeek   | DeepSeek-R1 | 手动输入，填写：deepseek-reasoner |
-3. 360AI支持文生图功能，在聊天中，话术为：画xxxxxxxx，AI则会返回一个图片链接。比如：画一个蓝天白云的图片
-4. DeepSeek-R1 因为WeChat的字数限制，删除了推理过程，直接输出结果。DeepSeek 可以不用反代，直接输入 API 地址 https://api.deepseek.com
+| Gemini Flash 1.5 | Gemini 1.5 API Key | 手动输入，填写：gemini-1.5-flash |
+| Gemini Flash 2.0 | Gemini 2.0 API Key | 手动输入，填写：gemini-2.0-flash-exp |
+| Gemini Flash 2.5 | Gemini 2.5 API Key | 手动输入，填写：gemini-2.5-flash |
+| 通义千问 | Qwen API Key | 手动输入，填写：qwen-turbo（弃用）或 qwen-max |
+| Moonshot Kimi | Kimi API Key | 手动输入，填写：moonshot-v1-8k 或 moonshot-v1-32k |
+| Claude 3 | Claude 3 API Key | 手动输入，填写：claude-3-opus-20240229 |
+| 360智脑 | 360 API Key | 手动输入，填写：360gpt-pro |
+| DeepSeek-V3 | DeepSeek API Key | 手动输入，填写：deepseek-chat |
+| DeepSeek-R1 | DeepSeek API Key | 手动输入，填写：deepseek-reasoner |
+
+3. 360AI 支持文生图功能，在聊天中，话术为：`画xxxxxxxx`，AI 会返回一个图片链接。
+例如：`画一个蓝天白云的图片`
+
+4. DeepSeek-R1 因为 WeChat 的字数限制，删除了推理过程，直接输出结果。
+DeepSeek 也可以不通过本项目反代，直接使用 API 地址：`https://api.deepseek.com`
+
 
 ## 其他事项
 - 部分代码参考了懒猫提供的Gemini.zip，[懒猫插件交流](https://t.me/maogroup)

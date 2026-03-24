@@ -20,11 +20,10 @@ index.js文件中，找到 const WXID_ARRAY = [];<br>
 2、端口修改：const PORT = 3003; //端口可以按需修改;<br>
 3、模型接口修改：在classes/ChatGPT.js中   // https://api.openai.com/v1// 可替换为任意兼容 OpenAI API 的上游接口;<br>
 $\color{red}{每次修改文件必须重新运行才能生效：}$ <br>
-$\color{red}{进入对应会话screen -r aihelper，通过按下 Ctrl + C（在大多数情况下）来停止运行中的 Node.js 应用程序，}$<br>
-$\color{red}{然后再次运行:}$
-```bash
-node index.js
-```
+## 部署方法（例1panel中部署，其它方法自行转化探索）
+1、1panel中根文件新建文件夹/www/wwwroot/你的文件夹，下载整个文件解压;<br>
+2、选择左侧/网站/运行环境/node.js进行部署，端口默认3003，可根据需求自行修改;<br>
+3、http://IP：3003（或自行反代使用）
 ## 使用方法
 以下操作都是在“微信助手”ChatGPT中操作：
 1. 将你的代理地址填写到“代理地址”栏。（http&#58;&#47;&#47;你的ip:3003）

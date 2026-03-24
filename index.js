@@ -12,37 +12,45 @@ const DeepSeek = require('./classes/DeepSeek');
 //需要对特定微信鉴权的，请在[]中填写对应微信ID
 //类似：const WXID_ARRAY = ['wxid_abcdefg','lambous','yourxxx','abdcedf']
 //[]内不添加微信ID则表示不进行鉴权
-const WXID_ARRAY = [];
+const WXID_ARRAY = ['xxxx1','wxid_66voxqfn3wy12',"La0101"];
 
 //360 API Key
-const APIKEY360 = "";
+const APIKEY360 = "fk123092065.BKjrK_g2aOp3z2fngVfSKda'bJYeflRZ9b08c23b";
 
 // 全局范围定义 supportedModels（支持的模型），格式：'模型名称':对应的AI类
 const supportedModels = {
-    'gpt-3.5-turbo': ChatGPT,
-    'gpt-4': ChatGPT,
-    'GPT-4o': ChatGPT,
-    'gemini-pro': Gemini,
-    'gemini': Gemini,
-    'gemini-1.5-pro-latest': Gemini,
-    'gemini-1.5-pro': Gemini,
-    'gemini-1.5-flash': Gemini,
-    'gemini-2.0-flash-exp': Gemini,
-    'gemini-2.0-flash': Gemini,
-    'gemini-2.0-pro-exp': Gemini,
-    'gemini-2.5-flash': Gemini,
-    'qwen-turbo': Qwen,
-    'qwen-max': Qwen,
-    'moonshot-v1-8k': Kimi,
-    'moonshot-v1-32k': Kimi,
-    'claude-3-opus-20240229': Claude3,
-    '360gpt-pro': GPT360,
-    'deepseek-chat': DeepSeek,
-    'deepseek-reasoner': DeepSeek
+'gpt-3.5-turbo': ChatGPT,
+'gpt-4': ChatGPT,
+'gpt-4o': ChatGPT,
+'gpt-5': ChatGPT,
+'gpt-5.1': ChatGPT,
+'gpt-5.2': ChatGPT,
+'gpt-5.4': ChatGPT,
+'gpt-5.4-mini': ChatGPT,
+'gpt-5-codex': ChatGPT,
+'gpt-5-codex-mini': ChatGPT,
+'gpt-5.1-codex': ChatGPT,
+'gpt-5.1-codex-mini': ChatGPT,
+'gpt-5.1-codex-max': ChatGPT,
+'gpt-5.2-codex': ChatGPT,
+'gpt-5.3-codex': ChatGPT,
+'gemini-pro': Gemini,
+'gemini': Gemini,
+'gemini-1.5-pro-latest': Gemini,
+'gemini-1.5-flash': Gemini,
+'gemini-2.5-flash': Gemini,
+'qwen-turbo': Qwen,
+'qwen-max': Qwen,
+'moonshot-v1-8k': Kimi,
+'moonshot-v1-32k': Kimi,
+'claude-3-opus-20240229': Claude3,
+'360gpt-pro': GPT360,
+'deepseek-chat': DeepSeek,
+'deepseek-reasoner': DeepSeek
 };
 
 const app = express();
-const PORT = 3000; //端口可以按需修改
+const PORT = 3003; //端口可以按需修改
 
 app.use(express.json());
 
@@ -57,20 +65,7 @@ async function getResponse(url, method, headers, body) {
         });
         return response.data;
     } catch (error) {
-        if (error.response) {
-            // 服务器响应了一个状态码，表示请求失败
-            console.error(`HTTP Error: ${error.response.status} - ${error.response.statusText}`);
-            console.error(`Response data: ${JSON.stringify(error.response.data)}`);
-            throw new Error(`HTTP Error: ${error.response.status} - ${error.response.statusText}`);
-        } else if (error.request) {
-            // 请求已发出，但没有收到响应
-            console.error('No response received:', error.request);
-            throw new Error('No response received from server');
-        } else {
-            // 其他错误
-            console.error('Error:', error.message);
-            throw new Error(`Error fetching response: ${error.message}`);
-        }
+        throw new Error(`Error fetching response: ${error}`);
     }
 }
 

@@ -5,6 +5,7 @@ only for 微信助手<br>
 ### 新增支持
 - 支持配置 OpenAI-compatible 上游接口
 - 支持更多 GPT-family 模型（如 gpt-5 / gpt-5.4 / gpt-5.3-codex 等）
+- 其它模型未进行修改，个人有需求自行修改
 ## 环境变量
 - `OPENAI_BASE_URL`
 GPT 类模型所使用的 OpenAI-compatible 上游接口地址。
